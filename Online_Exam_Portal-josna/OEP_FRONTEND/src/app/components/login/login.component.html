@@ -1,0 +1,57 @@
+<app-header>
+</app-header>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<div class="container">
+    <!-- Login card containing both the image and the form -->
+    <div class="login-card">
+        <!-- Left side of the card containing the decorative image -->
+        <div class="card-left">
+            <div class="image-cover">
+                <img src="assets/Online Exam Portal.png" alt="loginImage">
+            </div>
+        </div>
+
+        <!-- Right side of the card containing the login form -->
+        <div class="card-right">
+            <!-- Your Login Form -->
+            <div class="login-container">
+                <div *ngIf="isLoading; else showForm" class="d-flex justify-content-center login-spinner-container">
+                    <div class="spinner-border login-spinner text-white" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+
+                <ng-template #showForm>
+                    <!-- <h1 class="h4 text-center mb-2">Online Exam Portal!</h1> -->
+                    <h1 class="login-heading mb-2 text-center">Login! </h1>
+                    <form #loginForm="ngForm" (ngSubmit)="login()">
+                        <div class="input-group mb-3 form-group">
+                            <i class="bi bi-person-fill"></i>
+                            <label for="username" class="form-label" class="mt-1">Username</label>
+                            <input type="text" class="form-control login-input" id="username" name="username" [(ngModel)]="credentials.username" required placeholder="Enter your username">
+                        </div>
+                        <div class="input-group mb-3 form-group">
+                                <i class="bi bi-key-fill"></i><label class="mt-1"> Password</label>
+                            <input type="password" class="form-control login-input" id="password" name="password" [(ngModel)]="credentials.password" required placeholder="Enter your password">
+                        </div>
+                        <div class="input-group mb-3 form-group">
+                            <i class="bi bi-gear-fill"></i><label class="mt-1"> Role</label>
+                            <select class="form-select login-input" id="role" name="role" [(ngModel)]="role" required>
+                                <option value="" disabled selected>Select your role</option>
+                                <option value="STUDENT">Student</option>
+                                <option value="ADMIN">Admin</option>
+                                <option value="EXAMINER">Examiner</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-custom-main w-100 login-button d-flex align-items-center justify-content-center" [disabled]="isLoading">
+                            <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                            <i class="bi bi-box-arrow-in-right me-2"></i> Login
+                        </button>
+                    </form>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

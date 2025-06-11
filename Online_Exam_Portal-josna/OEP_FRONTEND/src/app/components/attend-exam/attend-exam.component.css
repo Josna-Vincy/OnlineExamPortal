@@ -1,0 +1,203 @@
+.attend-exam-container {
+    min-height: calc(100vh - 120px); /* Adjust 120px to account for header and footer heights */
+    margin-bottom: 60px; /* Add margin to create space before the footer */
+    margin-top: 56px; /* Set margin-top to the height of the navbar (adjust if your navbar has a different height) */
+    padding-top: 20px;
+}
+
+.navbar-brand {
+  margin: auto;
+  text-align: center;
+  font-size: 24px; /* Slightly larger text size */
+  font-weight: bold; /* Make text bold */
+  /* color: #222222 !important; Dark text */
+}
+
+.navbar-brand i {
+  margin-right: 8px; /* Small space between the icon and the text */
+  color: #ffffff;
+}
+
+/* Styling for Login */
+.nav-link {
+  font-size: 20px; /* Larger text size for Login */
+  font-weight: bold; /* Make Login text bold */
+  color: #ffffff !important; /* Darker text */
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for Login */
+.nav-link:hover {
+  /* color: #ffffff !important; Light color on hover */
+  text-decoration: none;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 300px; /* Compact width */
+}
+
+.modal-header {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 5px 5px 0 0;
+}
+
+.success-header {
+  background-color: #4CAF50; /* Green background for success */
+  color: white;
+}
+
+.error-header {
+  background-color: #f44336; /* Red background for error */
+  color: white;
+}
+
+.modal-message {
+  margin-bottom: 15px;
+}
+
+/* attend-exam.component.css */
+
+/* Apply a background image to the body */
+body {
+  /* background-image: url('/OEP_FRONTEND/public/assets/Online\ Exam\ Portal.png'); Replace with your image path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional: Keeps the background fixed while scrolling */
+}
+
+/* Style the exam container for a glass effect */
+.attend-exam-container {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Subtle shadow */
+  backdrop-filter: blur(10px); /* Apply the blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Optional: Add a light border */
+  margin-top: 66px; /* Adjust margin to account for fixed navbar and potential overlap */
+  margin-bottom: 80px; /* Adjust bottom margin as needed */
+  max-width: 1000px; /* Limit the maximum width of the container */
+  /* max-height: 800px; */
+  margin-left: auto; /* Center the container horizontally */
+  margin-right: auto; /* Center the container horizontally */
+  padding: 20px; /* Reduce padding */
+}
+
+.card {
+  width: 100%; /* Make the card take full width of its container */
+  /* Or you can set a specific width, e.g., */
+  /* max-width: 900px; */
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 800px;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+/* Adjust font sizes if needed to fit the new size */
+h2.exam-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.question-description {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+
+/* Custom styling for text elements */
+h2.exam-title {
+  color: #3498db; /* Example: Blue color */
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.time-remaining {
+  font-size: 1.1rem;
+  color: #2c3e50; /* Example: Dark gray color */
+  margin-bottom: 15px;
+}
+
+.question-card {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.question-header {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  border-radius: 8px 8px 0 0;
+}
+
+.question-number {
+  font-weight: bold;
+  color: #555;
+}
+
+.question-description {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Style for the textarea */
+textarea.form-control {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-height: 80px; /* Set a minimum height */
+  max-height: 150px; /* Set a maximum height if needed */
+  /* rows: 3;  */
+}
+
+/* Style for navigation buttons */
+.navigation-buttons button {
+  margin-right: 10px;
+}
+
+/* Style for the submit button */
+.submit-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+/* Style for the "No questions" message */
+.no-questions-message {
+  color: #777;
+  font-style: italic;
+}

@@ -1,0 +1,38 @@
+/* Center "Online Exam Portal" in the navbar */
+.navbar-brand {
+    margin: auto;
+    text-align: center;
+    font-size: 24px; /* Slightly larger text size */
+    font-weight: bold; /* Make text bold */
+    /* color: #222222 !important; Dark text */
+}
+
+.navbar-brand i {
+    margin-right: 8px; /* Small space between the icon and the text */
+    color: #ffffff;
+}
+
+/* Styling for Login */
+.nav-link {
+    font-size: 20px; /* Larger text size for Login */
+    font-weight: bold; /* Make Login text bold */
+    color: #ffffff !important; /* Darker text */
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for Login */
+.nav-link:hover {
+    /* color: #ffffff !important; Light color on hover */
+    text-decoration: none;
+}
+
+/* Adjust font size for smaller screens */
+@media (max-width: 768px) {
+    .navbar-brand h3 {
+        font-size: 18px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+}

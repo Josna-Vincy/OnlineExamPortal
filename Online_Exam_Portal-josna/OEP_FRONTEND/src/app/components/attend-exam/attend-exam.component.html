@@ -1,0 +1,60 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top text-white" style="background-color: #2A3B4D;">
+    <div class="container-fluid d-flex justify-content-center">
+      <a class="navbar-brand" href="#">
+        <h3 class="pt-1"><i class="fas fa-graduation-cap text-white"></i> Online Exam Portal</h3>
+      </a>
+    </div>
+  </nav>
+  
+  <div class="attend-exam-container container">
+    <h2 class="mb-4 fw-bold text-secondary exam-title">Attending Exam: {{ examTitle }}</h2>
+    <div class="mb-3 time-remaining">
+      <strong class="text-dark"><i class="fas fa-clock me-2"></i>Time remaining: </strong>
+      <span class="badge bg-secondary">{{ formatTime(timer) }}</span>
+    </div>
+  
+    <div *ngIf="questions.length > 0; else noQuestions">
+      <div *ngFor="let question of questions; let i = index" [hidden]="currentQuestionIndex !== i">
+        <div class="card mb-4 shadow question-card">
+          <div class="card-header bg-light question-header">
+            <h5 class="mb-0"><strong class="text-dark question-number">Question {{ i + 1 }}:</strong></h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text fs-5 question-description">{{ question.description }}</p>
+            <textarea class="form-control" rows="4" [(ngModel)]="answers[question.questionId]" name="question_{{ question.questionId }}" required></textarea>
+          </div>
+        </div>
+      </div>
+  
+      <div class="d-flex justify-content-between mb-4 navigation-buttons">
+        <button class="btn btn-outline-secondary" (click)="previousQuestion()" [disabled]="currentQuestionIndex === 0">
+            <i class="fas fa-arrow-left me-2"></i> Previous
+          </button>
+        <span class="text-muted">Question {{ currentQuestionIndex + 1 }} of {{ questions.length }}</span>
+        <button class="btn btn-outline-primary" (click)="nextQuestion()" [disabled]="currentQuestionIndex === questions.length - 1">
+            Next <i class="fas fa-arrow-right ms-2"></i>
+        </button>
+      </div>
+  
+      <button class="btn btn-success btn-lg shadow-sm submit-button" (click)="submitExam()">
+        <i class="fas fa-check-circle me-2"></i> Submit Exam
+      </button>
+    </div>
+  
+    <ng-template #noQuestions>
+      <div class="alert alert-info no-questions-message">
+        <i class="fas fa-exclamation-triangle me-2"></i> No questions found for this exam. Please contact the administrator.
+      </div>
+    </ng-template>
+  
+    <div *ngIf="showModal" class="modal-overlay">
+      <div class="modal-content">
+        <h3 [ngClass]="{'success-header': modalTitle === 'Success', 'error-header': modalTitle === 'Error'}">{{ modalTitle }}</h3>
+        <p class="modal-message">{{ modalMessage }}</p>
+        <button class="btn btn-success" (click)="closeModal()">OK</button>
+      </div>
+    </div>
+  </div>

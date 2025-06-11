@@ -1,0 +1,200 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4DC3B4, #45B0A3);
+    margin: 0;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 675px; /* Reduced max-width to 75% */
+    padding: 10px;
+    margin: 20px auto;
+    margin-top: 90px;
+}
+
+.form-group i {
+    margin-right: 6px;
+    color: #ff6864;
+    font-size: 1rem;
+}
+
+.form-group label {
+    color: #2A3B4D;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Login card holding the image and form */
+.login-card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    align-items: stretch;
+}
+
+/* Left side of the card containing the image */
+.card-left {
+    width: 50%;
+    overflow: hidden;
+    height: auto;
+}
+
+.card-left .image-cover {
+    height: 100%;
+    display: flex;
+}
+
+.card-left .image-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Right side of the card containing the form */
+.card-right {
+    width: 50%;
+    padding: 30px 25px; /* Reduced padding - adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #2A3B4D; /* Restored background color */
+}
+
+/* Login form container */
+.login-container {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+/* Main heading inside the login container */
+.h4 {
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 0.6rem; /* Reduced margin */
+    font-size: 1.2rem; /* Slightly reduced font size */
+}
+
+/* Login heading */
+.login-heading {
+    color: #ff6864;
+    text-align: center;
+    margin-bottom: 0.8rem; /* Reduced margin */
+    font-size: 2rem; /* Slightly reduced font size */
+    font-weight: bold;
+}
+
+/* Grouping labels and inputs */
+.input-group {
+    margin-bottom: 12px; /* Reduced margin */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 3px; /* Reduced margin */
+    font-weight: 500;
+    font-size: 0.8rem; /* Slightly reduced font size */
+    color: #FFFFFF;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 8px; /* Reduced padding */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem; /* Slightly reduced font size */
+    color: #2A3B4D;
+    background-color: #FFFFFF;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #ff6864;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(255, 104, 100, 0.25);
+}
+
+/* Login button styling */
+.login-button {
+    padding: 8px 16px; /* Reduced padding */
+    background-color: #ff6864;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem; /* Slightly reduced font size */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+.login-button:hover {
+    background-color: #e65a56;
+    transform: scale(1.01);
+}
+
+/* Loading spinner container */
+.login-spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure spinner container takes full height */
+}
+
+/* Style for the ng-template content */
+#showForm {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center; /* Vertically center the form content */
+}
+
+#showForm > * {
+    margin-bottom: 8px; /* Reduced margin */
+}
+
+#showForm > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .login-card {
+        flex-direction: column;
+    }
+
+    .card-left {
+        display: none;
+    }
+
+    .card-right {
+        width: 100%;
+        padding: 30px 48px; /* Adjusted padding for smaller screens */
+    }
+
+    .login-button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}

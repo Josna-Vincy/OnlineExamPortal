@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%; /* Ensure the html and body take up the full viewport height */
+    margin: 0; /* Remove default browser margins */
+  }
+  
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the container takes at least the full viewport height */
+  }
+  
+  .content {
+    flex-grow: 1; /* Allow the content area to take up remaining vertical space */
+  }
+  
+
+:root {
+  --primary-color: #FF6B01; /* Orange */
+  --secondary-color: #353535; /* Dark Gray */
+  --text-light: #FFFFFF; /* White */
+  --text-dark: #212529; /* Default Bootstrap dark text */
+  --content-bg: #ffffff; /* Light background for content */
+  --hover-brightness: 1.1;
+  --hover-darken: 0.9;
+
+  /* Maybe some base font settings */
+  --bs-body-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+}
+
+body {
+  font-family: var(--bs-body-font-family);
+  font-size: var(--bs-body-font-size);
+  font-weight: var(--bs-body-font-weight);
+  line-height: var(--bs-body-line-height);
+  color: var(--text-dark);
+  background-color: #ffffff /* Set default body background */
+}
+
+/* You could add other global styles here if needed */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--secondary-color); /* Example: Default heading color */
+}

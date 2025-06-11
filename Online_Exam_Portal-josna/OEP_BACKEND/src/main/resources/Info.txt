@@ -1,0 +1,38 @@
+//=============================================
+//================ FLOW =======================
+//=============================================
+
+//   Student -> Submit response -> RESPONSE DAO (store) <- Examiner //retrieves the data from database(userId,examID)
+//                                                      <- /evaluate 
+//                                                      <- output REPORT(ENTITY) //userId,examId,correctAns,Mark,TotalQuest
+
+
+//Proper Report functionalities
+//Proper Exception Handling
+//Test case
+//FLOW CHART = SEQUENCE DIAGRAM
+//*** DATASET ***
+
+//Rest endpoints => to depict the functionalities of each USERS
+
+//=============================================
+//============== Exceptions ===================
+//=============================================
+USERS
+    => UserNotFoundException
+    => UserExistsException
+    => PasswordMisMatchException
+
+Question
+    => MandatoryFieldMissingException
+
+Exam
+    => ExamNotFoundException
+    => ExamExistsException
+    => MandatoryFieldMissingException
+
+//=============================================
+//================ USERS ======================
+//=============================================
+1) Keerthi = examiner = keerthi@123
+2) Benny = examiner = abi@123
